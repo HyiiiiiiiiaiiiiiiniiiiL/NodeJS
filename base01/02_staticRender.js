@@ -18,6 +18,7 @@ const server = http.createServer(function(req, res) {
             res.end(data)
         })
     } else if (req.url === "/bbbbbb.css") {
+        //通过路由给页面，而不是通过路径
         fs.readFile("./test/aaaaaa.css", function(err, data) {
             res.writeHead(200, { "Content-type": "text/css" })
             res.end(data)
