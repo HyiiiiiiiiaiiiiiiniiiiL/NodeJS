@@ -14,6 +14,7 @@ var server = http.createServer(function(req, res) {
     res.writeHead(200, { "Content-Type": "text/html;charset=UTF8" });
     //两个参数，第一个是完整路径，当前目录写./
     //第二个参数，就是回调函数，表示文件读取成功之后，做的事情
+    //为什么要写./text/1.txt  而不直接写text/1.txt因为nodejs是跨平台的 第二种写法在linux平台无法识别
     fs.readFile("./test/1.txt", function(err, data) {
         if (err) {
             throw err
