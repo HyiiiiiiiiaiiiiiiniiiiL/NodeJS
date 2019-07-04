@@ -11,6 +11,7 @@ const server = http.createServer(function(req, res) {
     res.write("<h2>我是2标题</h2>");
     res.write("<h2>我是2标题</h2>");
     res.write("<h3>我是3标题</h3>");
+    //如果没有end  浏览器会被挂起，如果超时，浏览器会提示连接不上服务器
     res.end((1 + 2 + 3).toString())
 })
 server.listen(8888)
