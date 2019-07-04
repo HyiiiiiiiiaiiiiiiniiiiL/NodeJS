@@ -3,12 +3,13 @@ const url = require("url")
 const fs = require("fs")
 const path = require("path")
 
+//使用nodejs配置静态服务器
 http.createServer(function(req, res) {
     //得到用户的路径
     if (pathname === "/") {
         pathname = "index.html"
     }
-    //拓展名
+    //获得文件后缀
     var extname = path.extname(pathname)
     //真的读取这个文件
     fs.readFile("./static/" + pathname, function(err, data) {
